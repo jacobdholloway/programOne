@@ -42,6 +42,9 @@ CHILD <16741> process has done with testalphabet program !
 #include <libgen.h>   // for dirname
 #include <string.h> 
 #include <limits.h>
+#ifndef PATH_MAX
+#define PATH_MAX 4096
+#endif
 
 int main(void) {
     pid_t childpid1, childpid2;
