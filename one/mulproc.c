@@ -47,25 +47,25 @@ CHILD <16741> process has done with testalphabet program !
 #endif
 
 int main(void) {
-    pid_t childpid1, childpid2;
+    pid_t childpid1, childpid2; //name of the process ID's
     char path[PATH_MAX];
     char testalphabetPath[PATH_MAX];
     char testspecialPath[PATH_MAX];
 
     // Get the path of the current directory
-    readlink("/proc/self/exe", path, PATH_MAX);
+    readlink("/proc/self/exe", path, PATH_MAX); //Places value of a symbolic link that points to the path of current executable
     char *dir = dirname(path);
 
     // Build the paths to testalphabet and testspecial
-    strcpy(testalphabetPath, dir);
-    strcat(testalphabetPath, "/testalphabet");
+    strcpy(testalphabetPath, dir); //Copies directory into variable
+    strcat(testalphabetPath, "/testalphabet"); // Holds the path of testalphabet to map executable
     strcpy(testspecialPath, dir);
     strcat(testspecialPath, "/testspecial");
 
     // Fork the first child process
-    childpid1 = fork();
+    childpid1 = fork(); // Starts the fork
     if (childpid1 < 0) {
-        perror("fork failed");
+        perror("fork failed"); // Error handling
         exit(1);
     }
     else if (childpid1 == 0) {
@@ -92,11 +92,11 @@ int main(void) {
 
     // Wait for the first child to finish
     waitpid(childpid1, NULL, 0);
-    printf("CHILD <%d> process is done with testalphabet program!\n", childpid1);
+    printf("CHILD <%d> process is done with testalphabet program!\n", childpid1); // Once executable is finished it will print out to console.
 
     // Wait for the second child to finish
     waitpid(childpid2, NULL, 0);
     printf("CHILD <%d> process is done with testspecial program!\n", childpid2);
 
-    return 0;
+    return 0; // Exit code
 }

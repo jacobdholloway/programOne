@@ -3,7 +3,7 @@
 Created by Jacob Holloway
 Red ID: 827294826
 
-The purpose of this porject is to help understand forks and how the computer is able to handle multi processing 
+The purpose of this project is to help understand system calls and how the program is able to spawn and run processes as well as terminate.
 
 Your assignment is to write code in mulproc.c to fork two child processes running the two programs testalphabet and testspecial generated in preliminary programming test in parallel.
 
