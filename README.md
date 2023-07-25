@@ -6,6 +6,9 @@ Red ID: 827294826
 
 Hello I want to test the functionality of pushing using an ssh key instead of my username and password
 
+
+Hello from EDORAS!!!
+
 The purpose of this project is to help understand system calls and how the program is able to spawn and run processes as well as terminate.
 
 Your assignment is to write code in mulproc.c to fork two child processes running the two programs testalphabet and testspecial generated in preliminary programming test in parallel.
